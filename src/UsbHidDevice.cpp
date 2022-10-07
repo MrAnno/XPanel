@@ -1,3 +1,4 @@
+#include <cstring>
 #include "UsbHidDevice.h"
 #include "logger.h"
 

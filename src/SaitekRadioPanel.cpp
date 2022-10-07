@@ -1,4 +1,5 @@
-#include <stdlib.h>
+#include <cstring>
+#include <cstdlib>
 #include "UsbHidDevice.h"
 #include "SaitekRadioPanel.h"
 #include "logger.h"

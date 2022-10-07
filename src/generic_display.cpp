@@ -1,3 +1,5 @@
+#include <cmath>
+#include <cfloat>
 #include "generic_display.h"
 #include "lua_helper.h"
 #include "logger.h"

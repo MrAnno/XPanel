@@ -1,3 +1,4 @@
+#include <cstring>
 #include "lua_helper.h"
 #include "lua.hpp"
 #include "logger.h"
