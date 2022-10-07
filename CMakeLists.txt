@@ -1,0 +1,23 @@
+cmake_minimum_required(VERSION 3.14)
+
+project(XPanel VERSION 1.3 LANGUAGES CXX)
+
+string(TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWERCASE)
+
+set(CMAKE_CXX_STANDARD 20 CACHE STRING "C++ standard")
+set(CMAKE_CXX_STANDARD_REQUIRED ON CACHE BOOL "C++ standard is a requirement")
+set(CMAKE_CXX_EXTENSIONS OFF CACHE BOOL "C++ compiler specific extensions")
+
+include(CTest)
+
+find_package(PkgConfig QUIET REQUIRED)
+pkg_check_modules(hidapi REQUIRED IMPORTED_TARGET hidapi-libusb)
+
+find_package(Lua REQUIRED)
+
+add_subdirectory(SDK)
+add_subdirectory(src)
+add_subdirectory(test)
+
+install(DIRECTORY config/ DESTINATION sample_configs)
+install(DIRECTORY doc/ DESTINATION doc)
