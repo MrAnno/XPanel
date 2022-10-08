@@ -8,6 +8,10 @@ set(CMAKE_CXX_STANDARD 20 CACHE STRING "C++ standard")
 set(CMAKE_CXX_STANDARD_REQUIRED ON CACHE BOOL "C++ standard is a requirement")
 set(CMAKE_CXX_EXTENSIONS OFF CACHE BOOL "C++ compiler specific extensions")
 
+if (NOT MSVC)
+    add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
+
 include(CTest)
 
 find_package(PkgConfig QUIET REQUIRED)
