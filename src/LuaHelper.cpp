@@ -419,7 +419,8 @@ int LuaHelper::do_flight_loop()
 	if (!flight_loop_defined)
 		return EXIT_FAILURE;
 
-	if (!lua_getglobal(lua, "flight_loop"))
+	lua_getglobal(lua, "flight_loop");
+	if (!lua_isfunction(lua, lua_gettop(lua)))
 	{
 		Logger(TLogLevel::logINFO) << "Lua : no flight_loop function defined" << std::endl;
 		flight_loop_defined = false;
