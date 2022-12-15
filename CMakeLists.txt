@@ -7,6 +7,8 @@ set(PLUGIN_INSTALL_DIR ${PROJECT_NAME}/64)
 
 list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/.cmake)
 
+option(LINK_STATIC_DEPS "Link all dependencies statically" OFF)
+
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 set(CMAKE_CXX_STANDARD 20 CACHE STRING "C++ standard")
 set(CMAKE_CXX_STANDARD_REQUIRED ON CACHE BOOL "C++ standard is a requirement")
@@ -17,6 +19,16 @@ if (NOT MSVC)
 endif()
 
 include(CTest)
+
+if (LINK_STATIC_DEPS)
+    set(CMAKE_FIND_LIBRARY_PREFIXES "${CMAKE_STATIC_LIBRARY_PREFIX}")
+    set(CMAKE_FIND_LIBRARY_SUFFIXES "${CMAKE_STATIC_LIBRARY_SUFFIX}")
+
+    # workaround for https://gitlab.kitware.com/cmake/cmake/-/issues/21714
+    find_package(PkgConfig QUIET)
+    list(APPEND PKG_CONFIG_EXECUTABLE "--static")
+endif()
+
 
 add_subdirectory(hidapi)
 add_subdirectory(LUA)
