@@ -1,8 +1,8 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: light)" srcset="https://github.com/norberttak/XPanel/raw/master/doc/xpanel.svg">
-    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/norberttak/XPanel/raw/master/doc/xpanel-dark.svg">
-    <img alt="XPanel" src="https://github.com/norberttak/XPanel/raw/master/doc/xpanel.svg" width="450">
+    <source media="(prefers-color-scheme: light)" srcset="https://github.com/MrAnno/XPanel/raw/master/doc/xpanel.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/MrAnno/XPanel/raw/master/doc/xpanel-dark.svg">
+    <img alt="XPanel" src="https://github.com/MrAnno/XPanel/raw/master/doc/xpanel.svg" width="450">
   </picture>
 </p>
 
